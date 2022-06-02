@@ -1,0 +1,73 @@
+@use "variables";
+@use "reset";
+@import "mixins";
+
+
+@keyframes free_falling {
+    from {
+        transform: translateY(-850px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: variables.$color-background;
+    min-height: 100vh;
+    
+    @include letters;
+    color: variables.$color-background;
+    
+
+    display: flex;
+    flex-flow:  row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.box1 {
+    @include box_size;
+    @include centered;
+    background-color: variables.$color-first-div;
+    animation: free_falling 1.5s ease-in-out;
+}
+
+.box2 {
+    @include box_size;
+    @include centered;
+    background-color: variables.$color-second-div;
+    animation: free_falling 3s ease-in-out;
+
+}
+
+.box3 {
+    @include box_size;
+    @include centered;
+    background-color: variables.$color-third-div;
+    animation: free_falling 4.5s ease-in-out;
+}
+
+// @media screen and (max-width: 600px) {
+//     .box1, .box2, .box3 {
+//        flex-basis: 100%;
+//        margin: 4px;
+//    }
+// }
+// @media screen and (min-width: 601px ) and (max-width: 1200px)  {
+//    .box1, .box2, .box3 {
+//        flex-basis: calc ( 33% -3 * 16px);
+//        margin: 8px;
+//    }
+// }
+// @media screen and (min-width: 1201px)  {
+//    .box1, .box2, .box3 {
+//        flex-basis: calc ( 25% -3 * 16px);
+//        margin: 16px;
+//    }
+// }
+
+

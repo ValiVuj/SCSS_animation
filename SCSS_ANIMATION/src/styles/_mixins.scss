@@ -1,0 +1,16 @@
+@mixin box_size {
+    width:25%;
+    height: 300px;
+}
+
+@mixin letters {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 7em;
+}
+
+@mixin centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
